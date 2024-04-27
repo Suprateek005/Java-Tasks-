@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class studentmark {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Take input for the number of subjects
+        System.out.print("Enter the number of subjects: ");
+        int numSubjects = scanner.nextInt();
+
+        // Initialize total marks to 0
+        int totalMarks = 0;
+
+        // Take input for marks in each subject and calculate total marks
+        for (int i = 1; i <= numSubjects; i++) {
+            System.out.print("Enter marks for subject ");
+            int marks = scanner.nextInt();
+            totalMarks += marks;
+        }
+
+        // Calculate average percentage
+        int average = (int) totalMarks / (numSubjects * 100) * 100;
+
+        // Assign grade based on average percentage
+        String grade;
+        if (average >= 90) {
+            grade = "A";
+        } else if (average >= 80) {
+            grade = "B";
+        } else if (average >= 70) {
+            grade = "C";
+        } else if (average >= 60) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        // Display results
+        System.out.println("\nResults:");
+        System.out.println("Total Marks: " + totalMarks + "/" + (numSubjects * 100));
+        System.out.println("Average : "+ average);
+        System.out.println("Grade: " + grade);
+
+        scanner.close();
+    }
+}
+
+
